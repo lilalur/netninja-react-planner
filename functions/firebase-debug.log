@@ -1,0 +1,35 @@
+[debug] [2019-06-30T12:24:23.747Z] ----------------------------------------------------------------------
+[debug] [2019-06-30T12:24:23.749Z] Command:       /usr/local/bin/node /usr/local/bin/firebase functions:shell
+[debug] [2019-06-30T12:24:23.749Z] CLI Version:   7.0.0
+[debug] [2019-06-30T12:24:23.749Z] Platform:      darwin
+[debug] [2019-06-30T12:24:23.749Z] Node Version:  v10.16.0
+[debug] [2019-06-30T12:24:23.755Z] Time:          Sun Jun 30 2019 13:24:23 GMT+0100 (British Summer Time)
+[debug] [2019-06-30T12:24:23.755Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-06-30T12:24:23.771Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-06-30T12:24:23.771Z] > authorizing via signed-in user
+[debug] [2019-06-30T12:24:23.771Z] [iam] checking project net-ninja-marioplan-macska for permissions ["firebase.projects.get"]
+[debug] [2019-06-30T12:24:23.773Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-06-30T12:24:23.773Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-06-30T12:24:24.383Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-30T12:24:24.394Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/net-ninja-marioplan-macska:testIamPermissions  
+
+[debug] [2019-06-30T12:24:25.106Z] <<< HTTP RESPONSE 200
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "10"
+[debug] [2019-06-30T12:24:25.115Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/net-ninja-marioplan-macska  
+ 
+[debug] [2019-06-30T12:24:25.795Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-30T12:24:25.796Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1069834288940:getServerAppConfig  
+ 
+[debug] [2019-06-30T12:24:26.372Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2019-06-30T12:24:26.380Z] [functions] Watching "/Users/cselik1p/Dropbox/Learning react/planner/functions" for Cloud Functions...
+[debug] [2019-06-30T12:24:26.670Z] DEBUG: Functions runtime initialized.
+[debug] [2019-06-30T12:24:26.670Z] DEBUG: Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2019-06-30T12:24:26.738Z] DEBUG: firebase-admin has been stubbed.
+[debug] [2019-06-30T12:24:26.752Z] [functions] HTTP trigger initialized at http://localhost:5001/net-ninja-marioplan-macska/us-central1/helloWorld
+[debug] [2019-06-30T12:24:26.752Z] INFO: Ignoring trigger "projectCreated" because the Cloud Firestore emulator is not running.
+[debug] [2019-06-30T12:24:26.752Z] DEBUG: Unsupported trigger: {"eventTrigger":{"resource":"projects/net-ninja-marioplan-macska","eventType":"providers/firebase.auth/eventTypes/user.create","service":"firebaseauth.googleapis.com"},"name":"userJoined","entryPoint":"userJoined"}
+[debug] [2019-06-30T12:24:26.752Z] INFO: Ignoring trigger "userJoined" because the service "firebaseauth.googleapis.com" is not yet supported.
+[info] i  functions: Loaded functions: helloWorld, projectCreated, userJoined
