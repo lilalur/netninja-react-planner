@@ -72,7 +72,7 @@ class CreateProject extends Component {
                                 this.state.image.search("i1.adis.ws/v/") !== -1
                                 ?
                                 <div className="responsive-video">
-                                <p>We going to store: <span className="grey-text">{this.state.image}</span><br/><span className="text-lighten-1 grey-text">Please make sure on the Amplience system 360p/480p/720p all published from this video.</span></p>
+                                <p>We going to store: <span className="grey-text">{this.state.image}</span><br/><span className="text-lighten-1 grey-text footnote-text">Please make sure on the Amplience 360p/480p/720p all published from this video, as these all are going to get used on different devices.</span></p>
                                     <div id="vgs-control-replay"></div>
                                     <video id="vgs-video" preload="auto" controls loop="loop" poster={this.state.image} onClick="this.play();">
                                         <source src={this.state.image.concat('', '/mp4_720p')} type="video/mp4" onError={(e)=>{e.target.onerror = null; e.target.parentElement.parentElement.style.display = "none"}}/>

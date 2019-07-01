@@ -32,6 +32,12 @@ code {
     monospace;
 }
 
+.footnote-text {
+  font-size: 60%;
+}
+.footnote-text::before {
+  content: '*';
+}
 
 .peters_logo a {
   display: flex;
