@@ -18,7 +18,6 @@ class CreateProject extends Component {
     handleChangeMedia = (e) => {
         this.setState({
             [e.target.id]: 
-                
             e.target.value.search(/youtu(?:.*\/v\/|.*v\=|\.be\/)([A-Za-z0-9_\-]{11})/) !== -1 
                 ? 
                 e.target.value.search("/embed/") !== -1

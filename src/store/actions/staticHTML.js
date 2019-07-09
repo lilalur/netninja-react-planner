@@ -1,9 +1,9 @@
 // Wait for the page to load first
-window.onload = function() {
+window.onload = () => {
 
     const pageCreator = document.getElementById("exportxt");
 
-    pageCreator.onClick = function() {
+    pageCreator.onClick = () => {
         function downloadInnerHtml(filename, elId, mimeType) {
             const elHtml = document.getElementById(elId).innerHTML;
             const link = document.createElement('a');

@@ -20,7 +20,6 @@ export const createProject = (project) => {
                 //in case of error
                 dispatch({ type: 'CREATE_PROJECT_ERROR', err});
             });
-
     }
 };
 
@@ -31,10 +30,20 @@ export const createProject = (project) => {
 //     }
 // };
 
-export const deleteProject = () => {
+export const deleteProject = (project) => {
     //pause dispatch
-    return () => {
-            //make async call to database then continue the dispatch
-            console.log('hit the floor');
-    }
+    return (dispatch, getState, { getFirebase, getFirestore}) => {
+        //make async call to database then continue the dispatch
+        const firestore = getFirestore();
+        const profile = getState().firebase.profile;
+        const authorId = getState().firebase.auth.uid;
+        // console.log(authorId, profile.firstName);
+        firestore.remove('projects').then(() => {
+            //continue to dispatch the stuff
+            dispatch({ type: 'DELETE_PROJECT', project});
+        }).catch((err) => {
+            //in case of error
+            dispatch({ type: 'DELETE_PROJECT_ERROR', err});
+        });
+}
 };

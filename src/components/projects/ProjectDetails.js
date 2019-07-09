@@ -24,11 +24,13 @@ const ProjectDetails = (props) => {
             <div className="container section project-details">
                 <div className="card z-depth-0">
                     <div className="card-content">
-                    <Link to="/"><div className="left details-go_back_button"><button className="btn-floating btn-small waves-effect waves-light white grey-text z-depth-1 hoverable" title="back to dashboard">&lt;</button></div></Link>
-                    
-                    <Link to="/"><div className="right details-edit_button"><button className="btn-floating btn-small waves-effect waves-light white grey-text z-depth-1 hoverable" title="edit">&#47;</button></div></Link>
-                    
-                    <Link to="/"><div className="right details-delete_button"><button className="btn-floating btn-small waves-effect waves-light white grey-text z-depth-1 hoverable" title="delete">X</button></div></Link>
+                    <div className="react-element">
+                        <Link to="/"><div className="left details-go_back_button"><button className="btn-floating btn-small waves-effect waves-light white grey-text z-depth-1 hoverable" title="back to dashboard">&lt;</button></div></Link>
+                        
+                        <Link to="/"><div className="right details-edit_button"><button className="btn-floating btn-small waves-effect waves-light white grey-text z-depth-1 hoverable" title="edit">&#47;</button></div></Link>
+                        
+                        <Link to="/"><div className="right details-delete_button"><button className="btn-floating btn-small waves-effect waves-light white grey-text z-depth-1 hoverable" title="delete">X</button></div></Link>
+                    </div>
 
                     <span className="card-title">{project.title}</span>
                     {/* <p>
@@ -73,6 +75,21 @@ const ProjectDetails = (props) => {
                         <div>Posted by {project.authorFirstName} {project.authorLastName}</div>
                         <div>{moment(project.createAt.toDate()).calendar()}</div>
                     </div>
+                </div>
+                <div className="center">
+                    <button className="btn red accent-1" onClick={
+                        
+                        () => {
+                            let a = document.body.appendChild(
+                                document.createElement("a")
+                            );
+                            let trimmed = document.querySelector('.react-element').remove();
+                            a.download = project.title.trim().toLowerCase().replace(/\s/g, "-");
+                            a.href = "data:text/html,%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css%22%3E" + document.querySelector('#extractor').innerHTML; // Grab the HTML
+                            a.click(); // Trigger a click on the element
+                        }
+
+                    }>Download</button>
                 </div>
             </div>
         )
