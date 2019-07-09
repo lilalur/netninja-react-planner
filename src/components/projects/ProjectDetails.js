@@ -22,7 +22,7 @@ const ProjectDetails = (props) => {
     if (project) {
         return (
             <div className="container section project-details">
-                <div className="card z-depth-0">
+                <div className="card z-depth-0" id="extractor">
                     <div className="card-content">
                     <div className="react-element">
                         <Link to="/"><div className="left details-go_back_button"><button className="btn-floating btn-small waves-effect waves-light white grey-text z-depth-1 hoverable" title="back to dashboard">&lt;</button></div></Link>
